@@ -1,0 +1,29 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const Search = ({ value, onChange, onSubmit, children }) => (
+  <form onSubmit={onSubmit}>
+    <input
+      type="text"
+      value={value}
+      onChange={onChange}
+    />
+    <button type="submit">{children}</button>
+  </form>
+);
+
+Search.defaultProps = {
+    value: '',
+    onChange: () => {},
+    onSubmit: () => {},
+    children: null
+}
+
+Search.propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
+    children: PropTypes.node
+}
+
+export default Search;
